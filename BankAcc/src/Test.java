@@ -5,12 +5,12 @@ public class Test {
 	public static void main(String[] args) {
 		DebitAccount acc1 = new DebitAccount(1, "Jurgis", 500);
 		CreditAccount acc1Credit = new CreditAccount(acc1,1000, 100);
-		
-		
-		accountsTest(acc1,acc1Credit);
+
+
+		accountsOperations(acc1,acc1Credit);
 	}
 
-	public static void accountsTest(DebitAccount acc, CreditAccount accCredit) {
+	public static void accountsOperations(DebitAccount acc, CreditAccount accCredit) {
 
 		Scanner sc = new Scanner(System.in);
 		while (true) {

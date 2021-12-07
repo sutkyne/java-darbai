@@ -19,16 +19,16 @@ public class CreditAccount extends DebitAccount {
 			System.out.println("Unable to borrow, the limit is: " + this.borrowLimit);
 		}
 	}
-	
+
 
 	@Override
 	public void cashWithdrawal(double ammount) {
 		// TODO Auto-generated method stub
 		if (balance>=ammount&&ammount>0) {
 			balance -= ammount;
-			System.out.println("Cash withrawn succesfully");
+			System.out.println("Cash withrawn succesfully \n Balance: "+balance);
 		} else {
-			System.out.println("The amount is too great to withdraw \n Not enough balance");
+			System.out.println("The amount is too great to withdraw \n Not enough balance \n Balance: "+balance);
 		}
 	}
 
@@ -37,7 +37,7 @@ public class CreditAccount extends DebitAccount {
 		// TODO Auto-generated method stub
 		if (ammount > 0) {
 			balance += ammount;
-			System.out.println("Balance topped up successfully"+balance);
+			System.out.println("Balance topped up successfully \n Balance: "+balance);
 		}
 	}
 

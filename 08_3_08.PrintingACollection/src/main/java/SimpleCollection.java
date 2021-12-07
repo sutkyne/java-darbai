@@ -19,4 +19,31 @@ public class SimpleCollection {
         return this.elements;
     }
     
+public String printList(ArrayList<String> elements) {
+	for (String s : elements) {
+		return s;
+	}
+	return "";
+}
+	@Override
+	public String toString() {
+		if(elements.isEmpty()) {
+			return "The collection "+name+" is empty.";
+		}
+		String temp="";
+		if(elements.size()<2) {
+			for (String string : elements) {
+			 temp+=string;
+			}
+			return "The collection "+ name+" has "+elements.size()+" element:\n"+temp;
+			
+		} else {
+			for (String string : elements) {
+				 temp+=string+"\n";
+				}
+			return "The collection "+ name+" has "+elements.size()+" elements:\n"+temp;
+		}
+		
+	}
+    
 }

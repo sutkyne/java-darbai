@@ -20,11 +20,11 @@ public DebitAccount(int number, String name, double balance) {
 public void cashWithdrawal(double ammount) {
 	if (balance>=ammount&&ammount>0) {
 		balance -= ammount;
-		System.out.println("Cash withrawn succesfully");
+		System.out.println("Cash withrawn succesfully \n Balance: "+balance);
 	} else {
 		System.out.println("The amount is too great to withdraw \n Not enough balance"+this.balance);
 	}
-	
+
 }
  public void topUpBalance(double ammount) {
 	 if (ammount > 0) {
@@ -33,7 +33,7 @@ public void cashWithdrawal(double ammount) {
 		}else {
 			System.out.println("Ammount must be possitive");
 		}
-	 
+
  }
 
 public double getBalance() {
@@ -56,5 +56,5 @@ public String getName() {
 public String toString() {
 	return "DebitAccount [number=" + number + ", name=" + name + ", balance=" + balance + "]";
 }
- 
+
 }
