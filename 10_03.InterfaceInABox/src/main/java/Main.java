@@ -16,6 +16,19 @@ public class Main {
 		System.out.println(cd1);
 		System.out.println(cd2);
 		System.out.println(cd3);
+		Box bx = new Box(20);
+		bx.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
+		bx.add(new Book("Fyodo Dostoevsky", "Crime and Punishment", 2));
+		bx.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
+		bx.add(new Book("Fyodor Dostoevsk", "Crime and Punishment", 2));
+
+		bx.add(new CD("Pink Floy", "Dark Side of the Moon", 1973));
+		bx.add(new CD("Pink Floyd", "Dark Side of the Moon", 1973));
+		bx.add(new CD("Pin Floyd", "Dark Side of the Moon", 1973));
+		Box bxx = new Box(200);
+		bxx.add(bx);
+		System.out.println(bx);
+
 	}
 
 }
