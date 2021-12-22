@@ -17,7 +17,7 @@ public class Main {
 		System.out.println(cd2);
 		System.out.println(cd3);
 		Box bx = new Box(20);
-		bx.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
+		bx.add(new Book("Fyodor Dostoevsky", "Crime and Punishment\n", 2));
 		bx.add(new Book("Fyodo Dostoevsky", "Crime and Punishment", 2));
 		bx.add(new Book("Fyodor Dostoevsky", "Crime and Punishment", 2));
 		bx.add(new Book("Fyodor Dostoevsk", "Crime and Punishment", 2));

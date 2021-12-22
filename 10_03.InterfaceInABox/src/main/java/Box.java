@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Box implements Packable {
-	double maxCap;
+	private double maxCap;
 	private ArrayList<Packable> box;
 
 	public Box(double maxCap) {
@@ -32,7 +32,7 @@ public class Box implements Packable {
 
 	@Override
 	public String toString() {
-		return "Box [maxCap=" + maxCap + ", box=" + box + "]";
+		return "Box: " + box.size() + " items, total weight " + weight()+" kg";
 	}
 
 }

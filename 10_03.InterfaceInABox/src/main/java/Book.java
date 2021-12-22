@@ -14,7 +14,7 @@ public class Book implements Packable {
 	@Override
 	public double weight() {
 		// TODO Auto-generated method stub
-		return this.weight();
+		return this.weightBook;
 	}
 
 	@Override
