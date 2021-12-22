@@ -22,14 +22,14 @@ public void cashWithdrawal(double ammount) {
 		balance -= ammount;
 		System.out.println("Cash withrawn succesfully \n Balance: "+balance);
 	} else {
-		System.out.println("The amount is too great to withdraw \n Not enough balance"+this.balance);
+		System.out.println("The amount is too great to withdraw \n Not enough balance "+this.balance);
 	}
 
 }
  public void topUpBalance(double ammount) {
 	 if (ammount > 0) {
 			balance += ammount;
-			System.out.println("Balance topped up successfully"+this.balance);
+			System.out.println("Balance topped up successfully "+this.balance);
 		}else {
 			System.out.println("Ammount must be possitive");
 		}
