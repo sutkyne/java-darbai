@@ -1,12 +1,25 @@
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Account {
+public class AccountWithTransaction {
+	private String name;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	private int id;
 	private double balance;
 	private double annualInterestRate;
 	private Date dateCreated;
+	private List<Transaction> tr = new ArrayList<Transaction>();
 
-	public Account() {
+	public AccountWithTransaction() {
+		name="";
 		id = 0;
 		balance = 0;
 		annualInterestRate = 0;
@@ -14,15 +27,17 @@ public class Account {
 
 	}
 
-	public Account(int id, double balance) {
+	public AccountWithTransaction(String name,int id, double balance) {
 		super();
+		this.name=name;
 		this.id = id;
 		this.balance = balance;
 		dateCreated = new Date();
 	}
 
-	public Account(int id, double balance, double annualInterestRate) {
+	public AccountWithTransaction(String name,int id, double balance, double annualInterestRate) {
 		super();
+		this.name=name;
 		this.id = id;
 		this.balance = balance;
 		this.annualInterestRate = annualInterestRate;
@@ -68,7 +83,8 @@ public class Account {
 	public void withdrawal(double ammount) {
 		if (this.balance >= ammount && ammount > 0) {
 			this.balance -= ammount;
-			System.out.println("Withdrawal succesfull \n Balance: " + this.balance);
+			tr.add(new Transaction('w', ammount, balance, "Withdrawal succesfull"));
+			System.out.println("Balance: " + this.balance);
 		} else {
 			System.out.println("The amount is too great to withdraw \n Not enough balance \n" + this.balance);
 		}
@@ -78,7 +94,9 @@ public class Account {
 	public void deposit(double ammount) {
 		if (ammount > 0) {
 			this.balance += ammount;
-			System.out.println("Deposit successfull \n" + this.balance);
+			tr.add(new Transaction('d', ammount, balance, "Deposit succesfull"));
+			System.out.println("Balance: " + this.balance);
+
 		} else {
 			System.out.println("Ammount must be possitive");
 		}
@@ -87,8 +105,12 @@ public class Account {
 
 	@Override
 	public String toString() {
+		String str="";
+		for (Transaction transaction : tr) {
+			str+=transaction+"\n";
+		}
 		return "Account [balance=" + balance + ", getMonthlyInterest()=" + getMonthlyInterest() + ", dateCreated="
-				+ dateCreated + "]";
+				+ dateCreated + "]"+"\n"+str;
 	}
 
 }
