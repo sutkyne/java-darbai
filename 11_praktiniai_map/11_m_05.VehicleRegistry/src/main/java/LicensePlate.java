@@ -15,6 +15,21 @@ public class LicensePlate {
     }
 
     @Override
+	public int hashCode() {
+		return Objects.hash(country, liNumber);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof LicensePlate))
+			return false;
+		LicensePlate other = (LicensePlate) obj;
+		return Objects.equals(country, other.country) && Objects.equals(liNumber, other.liNumber);
+	}
+
+	@Override
     public String toString() {
         return country + " " + liNumber;
     }
