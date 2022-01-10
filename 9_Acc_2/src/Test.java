@@ -6,7 +6,7 @@ public class Test {
 //		AccountChecking accChecking= new AccountChecking(acc, 0);
 //		AccountSavings accSavings = new AccountSavings(acc);
 		AccountWithTransaction accWTransaction= new AccountWithTransaction ("George", 1122, 1000, 1.5);
-		accWTransaction.withdrawal(3000);
+		accWTransaction.withdrawal(30);
 		accWTransaction.withdrawal(40);
 		accWTransaction.withdrawal(50);
 		accWTransaction.deposit(5);
