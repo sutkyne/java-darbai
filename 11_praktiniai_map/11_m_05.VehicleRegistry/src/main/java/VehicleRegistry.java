@@ -38,6 +38,7 @@ public class VehicleRegistry {
 			if (owners.containsValue(v) != ownersTemp.containsValue(v)) {
 				System.out.println(v);
 				ownersTemp.put(k, v);
+
 			}
 		});
 	}
