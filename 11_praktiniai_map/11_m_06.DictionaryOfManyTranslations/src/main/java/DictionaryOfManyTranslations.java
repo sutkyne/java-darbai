@@ -23,11 +23,18 @@ public class DictionaryOfManyTranslations {
 	}
 
 	public ArrayList<String> translate(String word) {
-		return null;
+		ArrayList<String> ist;
+		if (!(hMap.containsKey(word))) {
+
+			return ist = new ArrayList<String>();
+		}
+		return hMap.get(word);
 
 	}
 
 	public void remove(String word) {
-
+		if (hMap.containsKey(word)) {
+			hMap.remove(word);
+		}
 	}
 }
