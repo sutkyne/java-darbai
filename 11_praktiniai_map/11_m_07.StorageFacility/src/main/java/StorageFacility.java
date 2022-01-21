@@ -1,14 +1,10 @@
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class StorageFacility {
 
 	private Map<String, ArrayList<String>> hMap;
-//	private String unit;
-//	private String item;
 	public StorageFacility() {
 		 hMap = new HashMap<>();
 	}
@@ -55,18 +51,6 @@ public ArrayList<String> storageUnits(){
 	});
 	return ist;
 }
-//@Override
-//public int hashCode() {
-//	return Objects.hash(item, unit);
-//}
-//@Override
-//public boolean equals(Object obj) {
-//	if (this == obj)
-//		return true;
-//	if (!(obj instanceof StorageFacility))
-//		return false;
-//	StorageFacility other = (StorageFacility) obj;
-//	return Objects.equals(item, other.item) && Objects.equals(unit, other.unit);
-//}
+
 
 }
