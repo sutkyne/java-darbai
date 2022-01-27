@@ -43,15 +43,16 @@ public class StreamPraktiniai {
     }
 
     public static Integer sum(List<Integer> integers){
-        throw new UnsupportedOperationException("Not implemented");
+    	return integers.stream().mapToInt(i -> i).sum();
     }
 
     public static List<Integer> skip(List<Integer> integers, Integer toSkip){
-        throw new UnsupportedOperationException("Not implemented");
+        return integers.stream().skip(2).collect(Collectors.toList());
     }
 
     public static List<String> getFirstNames(List<String> names){
-        throw new UnsupportedOperationException("Not implemented");
+        return names.stream().map(n -> n.substring(0, n.indexOf(" "))).collect(Collectors.toList());
+    
     }
 
     public static List<String> getDistinctLetters(List<String> names){
