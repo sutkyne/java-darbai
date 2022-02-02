@@ -22,38 +22,24 @@ public class Praktiniai {
 	}
 
 	public static User findByName(List<User> users, String name) {
-		List<User> collect = users.stream().filter(u -> u.getName().equals(name)).collect(Collectors.toList());
 
-		User userFake = users.get(0);
-		for (User user : users) {
-			if (collect.contains(user.getName()) ) {
-				userFake = user;
-			}
-		}
-		return userFake;
+		return users.stream().filter(u -> u.getName().equals(name)).findFirst().orElse(null);
 	}
 
 	public static List<User> sortByAge(List<User> users) {
-		List<User> sortedList = users.stream()
-				.sorted(Comparator.comparingInt(User::getAge))
+		List<User> sortedList = users.stream().sorted(Comparator.comparingInt(User::getAge))
 				.collect(Collectors.toList());
 		return sortedList;
 	}
 
 	public static User findOldest(List<User> users) {
-		Integer integer = users.stream().map(u -> u.getAge()).max(Integer::compare).get();
-		User userFake = users.get(0);
-		for (User user : users) {
-			if (integer == user.getAge()) {
-				userFake = user;
-			}
-		}
-		return userFake;
+
+		return users.stream().max(Comparator.comparingInt(User::getAge)).get();
 	}
 
 	public static int sumAge(List<User> users) {
 		return users.stream().mapToInt(u -> u.getAge()).sum();
-		
+
 	}
 
 }
