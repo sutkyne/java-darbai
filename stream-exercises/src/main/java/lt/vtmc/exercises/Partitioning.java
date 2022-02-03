@@ -1,6 +1,8 @@
 package lt.vtmc.exercises;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
 import static java.util.stream.Collectors.*;
 
 public class Partitioning {
@@ -19,7 +21,7 @@ public class Partitioning {
     }
 
     public static Map<Boolean, List<Person>> partitionAdults(List<Person> people) {
-        return null;
+        return people.stream().collect(Collectors.partitioningBy(p->p.getAge()>=18));
     }
 
 }
