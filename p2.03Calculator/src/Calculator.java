@@ -1,7 +1,7 @@
 
 public class Calculator {
 	private Reader reader;
-	private int track=0;
+	private int track = 0;
 
 	public Calculator() {
 		reader = new Reader();
@@ -29,7 +29,7 @@ public class Calculator {
 	private void sum() {
 		System.out.print("value1: ");
 		int red1 = reader.readInteger();
-		System.out.print("alue2: ");
+		System.out.print("value2: ");
 		int red2 = reader.readInteger();
 		System.out.println("sum of the values " + (red1 + red2));
 		track++;
@@ -54,6 +54,6 @@ public class Calculator {
 	}
 
 	private void statistics() {
-		System.out.print("Calculations done "+track);
+		System.out.print("Calculations done " + track);
 	}
 }
