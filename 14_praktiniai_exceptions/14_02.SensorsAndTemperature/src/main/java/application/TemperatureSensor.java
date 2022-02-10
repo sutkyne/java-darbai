@@ -1,32 +1,41 @@
 package application;
 
+import java.util.Random;
+
 public class TemperatureSensor implements Sensor {
 
-	TemperatureSensor() {
+    private boolean sensorOn;
 
-	}
+    public TemperatureSensor() {
+        this.sensorOn = false;
+    }
 
-	@Override
-	public boolean isOn() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public boolean isOn() {
+        return this.sensorOn;
+    }
 
-	@Override
-	public void setOn() {
-		// TODO Auto-generated method stub
-	}
+    @Override
+    public void setOn() {
+        this.sensorOn = true;
+    }
 
-	@Override
-	public void setOff() {
-		// TODO Auto-generated method stub
+    @Override
+    public void setOff() {
+        this.sensorOn = false;
 
-	}
+    }
 
-	@Override
-	public int read() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public int read() {
+        Random random = new Random();
+        int randomNumber = (random.nextInt(61) - 30);
+        if (isOn()) {
+            return randomNumber;
+        } else {
+            throw new IllegalStateException();
+        }
+
+    }
 
 }
